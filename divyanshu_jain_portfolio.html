@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Divyanshu Jain — Student and aspiring developer. Explore my skills, projects, and journey in technology." />
+  <meta name="theme-color" content="#090b14" />
+  <title>Divyanshu Jain | Student & Aspiring Developer</title>
+  <style>
+    :root {
+      --bg: #090b14; --surface: #111522; --surface2: #151b2b; --text: #f4f6ff;
+      --muted: #a5aec5; --line: rgba(255,255,255,.09); --accent: #9b8cff;
+      --accent2: #58d5e8; --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body { margin: 0; background: radial-gradient(ellipse at 78% 5%, rgba(91,74,190,.17), transparent 34%), var(--bg); color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; line-height: 1.65; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .wrap { width: min(var(--max), calc(100% - 44px)); margin: auto; }
+    header { position: sticky; top: 0; z-index: 20; backdrop-filter: blur(18px); background: rgba(9,11,20,.78); border-bottom: 1px solid var(--line); }
+    .nav { height: 74px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { font-weight: 800; letter-spacing: -.04em; font-size: 1.2rem; }
+    .brand span { color: var(--accent); }
+    .links { display: flex; gap: 28px; align-items: center; color: var(--muted); font-size: .92rem; }
+    .links a:hover { color: var(--text); }
+    .menu-btn { display: none; border: 1px solid var(--line); background: var(--surface); color: var(--text); border-radius: 10px; padding: 8px 11px; }
+    .hero { min-height: 690px; display: grid; grid-template-columns: 1.2fr .8fr; gap: 48px; align-items: center; padding: 90px 0 100px; }
+    .eyebrow { color: var(--accent2); text-transform: uppercase; letter-spacing: .18em; font-size: .76rem; font-weight: 750; }
+    h1 { font-size: clamp(3.2rem, 7vw, 5.8rem); line-height: 1.02; letter-spacing: -.065em; margin: 18px 0 22px; }
+    h1 span { background: linear-gradient(100deg, #b6aaff, #69ddeb); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .intro { max-width: 610px; color: var(--muted); font-size: 1.12rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 32px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 12px 19px; border-radius: 12px; font-weight: 700; border: 1px solid var(--line); transition: transform .2s, border-color .2s, background .2s; }
+    .btn:hover { transform: translateY(-3px); border-color: rgba(155,140,255,.6); }
+    .primary { background: linear-gradient(110deg, #8875f5, #5e9fe8); color: white; border: 0; box-shadow: 0 10px 35px rgba(112,100,230,.22); }
+    .hero-card { position: relative; min-height: 390px; border: 1px solid rgba(172,159,255,.22); border-radius: 28px; padding: 28px; background: linear-gradient(145deg, rgba(35,39,67,.94), rgba(15,20,34,.94)); box-shadow: 0 25px 90px rgba(0,0,0,.28); overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; }
+    .hero-card:before, .hero-card:after { content: ""; position: absolute; border-radius: 50%; filter: blur(1px); pointer-events: none; }
+    .hero-card:before { width: 230px; height: 230px; background: rgba(139,117,255,.2); right: -70px; top: -80px; }
+    .hero-card:after { width: 170px; height: 170px; background: rgba(88,213,232,.13); left: -70px; bottom: -75px; }
+    .code-top { color: #c2c9dc; font: .8rem ui-monospace, monospace; position: relative; z-index: 1; }
+    .avatar { width: 150px; height: 150px; border-radius: 32px; margin: 24px auto; display: grid; place-items: center; font-size: 3.4rem; font-weight: 850; letter-spacing: -.08em; color: white; background: linear-gradient(135deg, #8e7cff, #4abdd2); box-shadow: 0 20px 55px rgba(104,120,230,.28); transform: rotate(-5deg); position: relative; z-index: 1; }
+    .card-caption { position: relative; z-index: 1; text-align: center; }
+    .card-caption strong { display: block; font-size: 1.15rem; }
+    .card-caption small { color: var(--muted); }
+    .status { display: inline-flex; align-items: center; gap: 8px; color: #c7f8e1; font-size: .82rem; margin-top: 12px; }
+    .dot { width: 8px; height: 8px; background: #53d69a; border-radius: 50%; box-shadow: 0 0 12px #53d69a; }
+    section { padding: 82px 0; }
+    .section-head { margin-bottom: 34px; }
+    .section-head h2 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.05em; margin: 7px 0; }
+    .section-head p { color: var(--muted); max-width: 650px; margin: 0; }
+    .about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 22px; }
+    .panel { border: 1px solid var(--line); border-radius: 20px; background: linear-gradient(145deg, rgba(21,27,43,.95), rgba(14,18,30,.95)); padding: 27px; }
+    .panel p { color: var(--muted); margin: 0; }
+    .quick-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .fact { padding: 17px; border-radius: 14px; background: rgba(255,255,255,.035); border: 1px solid var(--line); }
+    .fact strong { display: block; font-size: 1.15rem; }
+    .fact span { color: var(--muted); font-size: .85rem; }
+    .skills { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .skill { padding: 19px; border-radius: 16px; border: 1px solid var(--line); background: var(--surface); transition: .2s; }
+    .skill:hover, .project:hover { transform: translateY(-4px); border-color: rgba(155,140,255,.45); }
+    .skill .symbol { color: var(--accent2); font-size: 1.35rem; margin-bottom: 10px; }
+    .skill strong { display: block; }
+    .skill small { color: var(--muted); }
+    .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .project { padding: 25px; border: 1px solid var(--line); border-radius: 19px; background: linear-gradient(145deg, #151b2b, #101522); transition: .2s; }
+    .project-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+    .project-icon { width: 45px; height: 45px; display: grid; place-items: center; border-radius: 13px; background: rgba(155,140,255,.13); color: #b9adff; font-size: 1.25rem; }
+    .tag { font-size: .73rem; color: var(--accent2); background: rgba(88,213,232,.08); border: 1px solid rgba(88,213,232,.17); border-radius: 999px; padding: 5px 10px; }
+    .project h3 { margin: 0 0 8px; font-size: 1.22rem; }
+    .project p { color: var(--muted); margin: 0 0 17px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 7px; }
+    .chips span { font-size: .75rem; padding: 5px 9px; border-radius: 7px; color: #c6cde0; background: rgba(255,255,255,.055); }
+    .timeline { border-left: 1px solid rgba(155,140,255,.45); margin-left: 8px; padding-left: 25px; }
+    .timeline-item { position: relative; padding: 0 0 25px; }
+    .timeline-item:before { content: ""; position: absolute; left: -31px; top: 8px; width: 11px; height: 11px; background: var(--accent); border: 4px solid #17172a; border-radius: 50%; }
+    .timeline-item h3 { margin: 0 0 4px; }
+    .timeline-item p { margin: 0; color: var(--muted); }
+    .contact { text-align: center; padding: 55px 28px; border: 1px solid rgba(155,140,255,.24); border-radius: 25px; background: radial-gradient(ellipse at 50% 0%, rgba(125,105,245,.18), transparent 60%), var(--surface); }
+    .contact h2 { font-size: clamp(2rem, 4vw, 3rem); margin: 8px 0; letter-spacing: -.05em; }
+    .contact p { color: var(--muted); max-width: 580px; margin: 0 auto 25px; }
+    footer { border-top: 1px solid var(--line); padding: 24px 0; color: var(--muted); font-size: .85rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; padding-top: 65px; gap: 35px; }
+      .hero-card { min-height: 340px; max-width: 480px; width: 100%; margin: auto; }
+      .about-grid { grid-template-columns: 1fr; }
+      .skills { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 620px) {
+      .wrap { width: min(100% - 30px, var(--max)); }
+      .nav { height: 66px; }
+      .menu-btn { display: inline-flex; }
+      .links { display: none; position: absolute; top: 65px; left: 0; right: 0; padding: 18px 22px 22px; flex-direction: column; align-items: flex-start; gap: 15px; background: #0e1220; border-bottom: 1px solid var(--line); }
+      .links.open { display: flex; }
+      .hero { min-height: auto; padding: 65px 0 70px; }
+      h1 { font-size: clamp(3rem, 15vw, 4.5rem); }
+      section { padding: 65px 0; }
+      .projects { grid-template-columns: 1fr; }
+      .quick-facts { grid-template-columns: 1fr 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *:before, *:after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#home">DJ<span>.</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <div class="links" id="navLinks">
+        <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#journey">Journey</a><a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section class="hero" id="home">
+        <div class="reveal">
+          <div class="eyebrow">Student · Curious mind · Future builder</div>
+          <h1>Hi, I'm<br><span>Divyanshu Jain.</span></h1>
+          <p class="intro">A student and aspiring developer who enjoys learning how technology works and turning ideas into useful digital experiences. I'm building my skills one project at a time.</p>
+          <div class="actions">
+            <a class="btn primary" href="#projects">Explore my work <span>↗</span></a>
+            <a class="btn" href="#contact">Get in touch</a>
+          </div>
+          <div class="status"><span class="dot"></span> Open to learning, collaboration & opportunities</div>
+        </div>
+        <div class="hero-card reveal" aria-label="Divyanshu Jain profile card">
+          <div class="code-top">&lt;developer /&gt; <span style="float:right;color:#7f8ba8">01 — 04</span></div>
+          <div class="avatar">DJ</div>
+          <div class="card-caption"><strong>Divyanshu Jain</strong><small>Student & Aspiring Developer</small></div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="section-head reveal"><div class="eyebrow">A little about me</div><h2>Curiosity into capability.</h2><p>I'm at the beginning of my development journey, exploring the tools and ideas that help people solve real problems.</p></div>
+        <div class="about-grid">
+          <div class="panel reveal"><p>I enjoy experimenting with code, learning new technologies, and working through practical challenges. My current focus is strengthening my programming fundamentals, understanding the web development workflow, and exploring how AI can make everyday experiences better. I believe consistent practice and curiosity are the foundations of good development.</p></div>
+          <div class="quick-facts reveal">
+            <div class="fact"><strong>Learning</strong><span>Every day</span></div>
+            <div class="fact"><strong>Focus</strong><span>Development & AI</span></div>
+            <div class="fact"><strong>Mindset</strong><span>Build · Learn · Improve</span></div>
+            <div class="fact"><strong>Based in</strong><span>India</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="section-head reveal"><div class="eyebrow">What I'm learning</div><h2>Skills & technologies.</h2><p>A growing toolkit. I keep practising and expanding these skills through coursework and personal projects.</p></div>
+        <div class="skills">
+          <div class="skill reveal"><div class="symbol">⌘</div><strong>HTML & CSS</strong><small>Web structure and styling</small></div>
+          <div class="skill reveal"><div class="symbol">JS</div><strong>JavaScript</strong><small>Interactive web basics</small></div>
+          <div class="skill reveal"><div class="symbol">Py</div><strong>Python</strong><small>Programming fundamentals</small></div>
+          <div class="skill reveal"><div class="symbol">$_</div><strong>Linux & Bash</strong><small>Terminal and shell scripting</small></div>
+          <div class="skill reveal"><div class="symbol">⑂</div><strong>Git & GitHub</strong><small>Version control workflow</small></div>
+          <div class="skill reveal"><div class="symbol">✧</div><strong>AI Concepts</strong><small>Exploring AI-powered ideas</small></div>
+          <div class="skill reveal"><div class="symbol">▤</div><strong>Markdown</strong><small>Technical documentation</small></div>
+          <div class="skill reveal"><div class="symbol">◎</div><strong>Problem Solving</strong><small>Learning by doing</small></div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="section-head reveal"><div class="eyebrow">Selected work</div><h2>Projects & explorations.</h2><p>Some concepts and learning projects that reflect the areas I'm exploring. These can be updated with live demos and repository links as they become available.</p></div>
+        <div class="projects">
+          <article class="project reveal">
+            <div class="project-top"><div class="project-icon">✦</div><span class="tag">AI concept</span></div>
+            <h3>Sakhi — Safety Support Concept</h3>
+            <p>An early-stage hackathon concept exploring how an AI-assisted experience could help users access safety resources and trusted support.</p>
+            <div class="chips"><span>AI concepts</span><span>Social impact</span><span>Ideation</span></div>
+          </article>
+          <article class="project reveal">
+            <div class="project-top"><div class="project-icon">⌘</div><span class="tag">Linux practice</span></div>
+            <h3>Linux Lab & Shell Automation</h3>
+            <p>Coursework exercises in file management, process monitoring, permissions, Bash scripting, and simple backup automation.</p>
+            <div class="chips"><span>Linux</span><span>Bash</span><span>Automation</span></div>
+          </article>
+          <article class="project reveal">
+            <div class="project-top"><div class="project-icon">⑂</div><span class="tag">Version control</span></div>
+            <h3>Git & GitHub Practice</h3>
+            <p>Hands-on practice with repositories, commits, staging, remote repositories, and writing clear project documentation.</p>
+            <div class="chips"><span>Git</span><span>GitHub</span><span>Markdown</span></div>
+          </article>
+          <article class="project reveal">
+            <div class="project-top"><div class="project-icon">▣</div><span class="tag">Portfolio</span></div>
+            <h3>Personal Portfolio Website</h3>
+            <p>A responsive personal website to introduce myself, present my learning journey, and make it easy to connect.</p>
+            <div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="journey">
+        <div class="section-head reveal"><div class="eyebrow">My journey</div><h2>Learning in progress.</h2><p>Building a strong foundation through study, experimentation, and practical work.</p></div>
+        <div class="panel reveal">
+          <div class="timeline">
+            <div class="timeline-item"><h3>Student — Computer Science</h3><p>Developing core computing knowledge and practising technical skills through academic lab work.</p></div>
+            <div class="timeline-item"><h3>Exploring development</h3><p>Learning web technologies, programming fundamentals, Linux, and version control.</p></div>
+            <div class="timeline-item"><h3>Building and experimenting</h3><p>Exploring project ideas, including AI-assisted concepts and practical automation.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="contact reveal">
+          <div class="eyebrow">Let's connect</div>
+          <h2>Have an idea? Let's talk.</h2>
+          <p>I'm always happy to connect with fellow learners, developers, and people working on interesting ideas. Feel free to reach out.</p>
+          <a class="btn primary" href="mailto:divyxnshu.jain@gmail.com">Email Divyanshu ↗</a>
+          <div class="actions" style="justify-content:center;margin-top:15px">
+            <a class="btn" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub profile</a>
+            <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+          <p style="font-size:.78rem;margin:17px auto 0">Replace the social links with your personal profile URLs.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer><div class="wrap footer-inner"><span>© <span id="year"></span> Divyanshu Jain. Made with curiosity.</span><a href="#home">Back to top ↑</a></div></footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

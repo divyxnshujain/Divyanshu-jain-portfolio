@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Divyanshu  jain — Freelance Developer & Designer</title>
+<meta name="description" content="Freelance developer and designer building websites, apps and brand design. Replace this with your own description.">
+<meta name="theme-color" content="#1A1818">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- PULL-CORD THEME SWITCH (paste right after <body>) -->
+<div class="pullcord" id="pullcord">
+  <div class="pc-rope"></div>
+  <div class="pc-handle" role="switch" tabindex="0" aria-label="Pull to switch dark / light theme" aria-checked="true">
+    <span class="pc-cap"></span>
+    <span class="pc-bead"></span>
+  </div>
+  <span class="pc-hint">Pull me</span>
+</div>
+
+<a href="#main" class="skip">Skip to content</a>
+
+<!-- ===== LOADER ===== -->
+<div id="loader" aria-hidden="true">
+  <div class="mono">Piyush Panwar · Portfolio<br><span style="color:var(--muted)">Web · App · UI/UX · Graphic design</span></div>
+  <div>
+    <div class="mono" style="color:var(--muted)">Opening up the work</div>
+    <div class="big"><span id="loadNum">000</span></div>
+    <div class="bar"><i id="loadBar"></i></div>
+  </div>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header id="header">
+  <div class="wrap head">
+    <a href="#top" class="brand">Divyanshu jain
+      <div class="ticker" aria-hidden="true"><ul><li>Web development</li><li>App development</li><li>UI/UX design</li><li>Graphic design</li><li>Photography</li><li>Web development</li></ul></div>
+    </a>
+    <div class="head-right">
+      <span class="clock mono" id="headClock">Local time —</span>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false">Menu</button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MENU ===== -->
+<nav id="menu" aria-label="Main menu">
+  <button class="menu-btn menu-close" id="menuClose">Close</button>
+  <div class="wrap">
+    <ol>
+      <li><a href="#top" data-close>Home</a></li>
+      <li><a href="#" data-skill="web" data-close>Web Development</a></li>
+      <li><a href="#" data-skill="app" data-close>App Development</a></li>
+      <li><a href="#" data-skill="uiux" data-close>UI/UX Design</a></li>
+      <li><a href="#" data-skill="graphic" data-close>Graphic Design</a></li>
+      <li><a href="#about" data-close>My story</a></li>
+      <li><a href="#" data-contact data-close>Contact</a></li>
+    </ol>
+  </div>
+  <div class="menu-foot mono"><span><span class="dot"></span> Available for work</span><span class="liveTime">—</span></div>
+</nav>
+
+<main id="main">
+<!-- ===== HERO ===== -->
+<div id="top" class="wrap hero">
+  <div class="hero-text">
+  <span class="mono" style="color:var(--muted);margin-bottom:16px">Independent Freelancer</span>
+  <h1>Hi, I'm <em>divyanshu&nbsp;jain.</em> I am a <span class="rotator"><span id="rot">developer</span></span></h1>
+  <div class="actions">
+    <button class="btn btn-primary" data-contact>Start a project →</button>
+    <a class="btn btn-ghost" href="#work">See my work</a>
+  </div>
+  <div class="meta mono"><span><span class="dot"></span>&nbsp; Available for work</span><span>Remote-first, worldwide</span></div>
+  </div>
+
+  <!-- YOUR PHOTO: black & white, colour paints in where the mouse moves. Click it to open the ability card.
+       Swap me-bw.webp (black & white) and me-color.webp (colour) for new photos with a transparent background. -->
+  <div class="fig" id="fig" role="button" tabindex="0" aria-label="Open my ability card">
+    <span class="fig-wm" id="figWm" aria-hidden="true">Piyush Panwar</span>
+    <img id="figBase" src="me-bw.webp" alt="Portrait of Piyush Panwar" width="900" height="857">
+    <canvas id="figCanvas" aria-hidden="true"></canvas>
+    <button class="fig-card" id="abilityBtn" type="button"><span class="ph"><img src="me-color.webp" alt=""></span>My ability card</button>
+  </div>
+  <div class="scroll-cue mono">Scroll to explore <i>↓</i></div>
+</div>
+
+<!-- ===== DOORS ===== -->
+<section id="work">
+  <div class="doors-pin" id="doorsPin">
+    <div class="doors-sticky">
+      <div class="wrap doors-head">
+        <div>
+          <span class="eyebrow mono">My work, one door per skill</span>
+          <h2 class="sec-title">Magic happens<br><em>behind the doors</em></h2>
+        </div>
+        <p class="mono" style="color:var(--muted)">Swipe along the wall →</p>
+      </div>
+      <div class="wall" id="wall"></div>
+      <div class="wrap wall-foot">
+        <span class="mono" id="doorCount">01 / 05</span>
+        <div class="wall-bar"><i id="wallBar">YN</i></div>
+        <div class="wall-nav"><button id="wallPrev" aria-label="Previous door">←</button><button id="wallNext" aria-label="Next door">→</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STORY ===== -->
+<section id="about">
+  <div class="story-pin" id="storyPin">
+    <div class="wrap story-sticky">
+      <div>
+        <span class="eyebrow mono">My story</span>
+        <h2 class="sec-title">Let's go back <em>in time.</em></h2>
+        <div class="odo" id="odo" aria-hidden="true"></div>
+        <div class="story-meta mono"><span id="storyDate">—</span><span><b id="storyNum">01</b> / 0<span id="storyTotal">5</span></span></div>
+        <div class="steps" id="steps"></div>
+      </div>
+      <div class="tcards" id="tcards"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section>
+  <div class="wrap">
+    <div class="cta reveal">
+      <span class="mono"><span class="dot"></span>&nbsp; Available for new work</span>
+      <h2 class="sec-title" style="margin-top:16px">Got a project?<br><em>Let's build it together.</em></h2>
+      <p>I'm taking on new freelance work: websites, apps, interfaces and visual content. Tell me what you're building and I'll get back to you within a day.</p>
+      <div class="actions"><button class="btn btn-primary" data-contact>Start a project →</button><a class="btn btn-ghost" href="#work">See my work</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><p class="serif" style="font-size:1.8rem;line-height:1.1">Websites, apps and design,<br>from first sketch to launch.</p></div>
+      <div><h4 class="mono">Work</h4><ul id="footWork"></ul></div>
+      <div><h4 class="mono">Navigate</h4><ul><li><a href="#top">Home</a></li><li><a href="#about">My story</a></li><li><a href="#" data-contact>Contact</a></li></ul></div>
+      <div><h4 class="mono">Status</h4><ul><li><span class="dot"></span> Available for work</li><li>Remote-first, worldwide</li><li>Local time <span class="liveTime">—</span></li></ul></div>
+    </div>
+    <div class="foot-big">Divyanshu jain</div>
+    <div class="foot-bottom"><span>© <span id="yr"></span> Piyush Panwar. Designed and built by you.</span><a href="#top">Back to top ↑</a></div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="Back to top">↑</button>
+<div id="cursor">Click to enter</div>
+
+<!-- ===== SKILL OVERLAY ===== -->
+<div id="skill" role="dialog" aria-modal="true" aria-labelledby="skillTitle">
+  <div class="bar"><button class="menu-btn" id="skillBack">← Back</button><span class="mono" id="skillNum"></span><button class="btn btn-primary" data-contact style="padding:.6em 1.1em">Start a project</button></div>
+  <div class="wrap">
+    <div class="intro"><span class="eyebrow mono" id="skillEyebrow"></span><h2 class="sec-title" id="skillTitle"></h2><p id="skillDesc"></p></div>
+    <div class="filters" id="filters"></div>
+    <div class="projects" id="projects"></div>
+  </div>
+</div>
+
+<!-- ===== ABILITY CARD MODAL ===== -->
+<div class="modal" id="abilityModal" aria-hidden="true">
+  <button class="modal-close" data-close-modal aria-label="Close">✕</button>
+  <div class="card-stage" id="cardStage">
+    <div class="card-loading"><div class="ring" id="cardRing"></div><span class="mono" style="color:#F4EEE5aa">Loading the card</span><span class="pct" id="cardPct" style="color:#F4EEE5">0%</span></div>
+    <div class="card-scene" id="cardScene">
+      <div class="holo" id="holo">
+        <!-- FRONT -->
+        <div class="holo-face"><div class="holo-in">
+          <div class="holo-top"><span>Ability card</span><span id="cardNo">No. 001</span></div>
+          <div class="holo-photo">
+            <span class="hp-glow"></span>
+            <span class="hp-wm" id="cardInitials">YN</span>
+            <img class="hp-me" src="me-color.webp" alt="Piyush Panwar">
+            <span class="hp-shade"></span>
+            <span class="lvl" id="cardLvl">LVL 26</span>
+          </div>
+          <div class="holo-name" id="cardName">Divyanshu jain</div>
+          <div class="holo-role" id="cardRole">Developer · Designer · Photographer</div>
+          <div class="abil" id="cardAbil"></div>
+          <div class="foil"></div><div class="glare"></div>
+        </div></div>
+        <!-- BACK -->
+        <div class="holo-face holo-back"><div class="holo-in">
+          <div>
+            <div class="holo-top"><span>About</span><span><span class="dot"></span> Available</span></div>
+            <h4 id="cardHello">Hi, I'm Divyanshu jain</h4>
+            <p id="cardIntro">A short intro about you.</p>
+            <div class="chips" id="cardChips"></div>
+          </div>
+          <div class="holo-foot"><span id="cardPlace">Remote · Worldwide</span><button class="btn btn-primary" data-contact style="padding:.5em 1em;font-size:.7rem">Hire me</button></div>
+          <div class="foil"></div><div class="glare"></div>
+        </div></div>
+      </div>
+    </div>
+    <span class="card-hint mono">Move to tilt · Tap to flip</span>
+  </div>
+</div>
+
+<!-- ===== CONTACT MODAL ===== -->
+<div class="modal" id="contactModal" aria-hidden="true">
+  <div class="contact-box" id="contactBox">
+    <button class="modal-close" data-close-modal aria-label="Close" style="top:14px;right:14px">✕</button>
+    <form id="contactForm">
+      <h2>Start a project</h2>
+      <p class="sub">I reply within one business day.</p>
+      <label class="hp">Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label>
+      <label class="field"><span>Name</span><input name="name" required></label>
+      <label class="field"><span>Email</span><input name="email" type="email" required></label>
+      <label class="field"><span>Project</span><textarea name="project" rows="4" required placeholder="What are you building?"></textarea></label>
+      <button class="btn btn-primary" style="width:100%;justify-content:center">Write the email →</button>
+    </form>
+    <div class="success">
+      <div class="tick">✓</div>
+      <h2>Almost there</h2>
+      <p class="sub">Your email app has opened with your message ready to go. Press send there and I'll reply within one business day.</p>
+      <p class="sub">Email app didn't open? Write to <a id="mailLink" style="color:var(--accent)"></a>.</p>
+      <button class="btn btn-ghost" data-close-modal>Close</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
